@@ -1,0 +1,35 @@
+{
+  "name": "swgoh",
+  "version": "1.0.0",
+  "description": "Star War Galaxy of Heros REST API",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pittpir/Project_2.git"
+  },
+  "keywords": [
+    "star",
+    "wars"
+  ],
+  "author": "Christopher Conley",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pittpir/Project_2/issues"
+  },
+  "homepage": "https://github.com/pittpir/Project_2#readme",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "body-parser": "^1.18.3",
+    "compression": "^1.7.3",
+    "coreapi": "^0.1.1",
+    "express": "^4.16.4",
+    "morgan": "^1.9.1",
+    "node-fetch": "^2.3.0",
+    "pg": "^7.8.0",
+    "sql": "^0.78.0"
+  }
+}
