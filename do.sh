@@ -1,2 +1,4 @@
+curl localhost:3000/swgoh/ships
+#curl -X DELETE localhost:3000/swgoh/abilities/869
 #curl -X POST localhost:3000/swgoh/ships -H "Content-Type: application/json" -d '[{"name":"Erase","url":"http://erase","image":"//erase","description":"Erase this","power": 55555,"alignment":"Light Side","role":"Meat Maker","capital_ship":false,"base_id":"Yuk","tags":["Galactic Republic","Jedi"],"abilities":["Dispel","Gain Turn Meter","Offense Up","Reset Cooldown"]}]'
-curl -X PUT localhost:3000/swgoh/ships/6 -H "Content-Type: application/json" -d '[{"url": "http://swgoh.gg/ships/cassians-u-wing/777","image": "//swgoh.gg/static/img/assets/tex.charui_uwing_hero.png/777"}]'
+#curl -X PUT localhost:3000/swgoh/ships/6 -H "Content-Type: application/json" -d '[{"url": "http://swgoh.gg/ships/cassians-u-wing/777","image": "//swgoh.gg/static/img/assets/tex.charui_uwing_hero.png/777"}]'
