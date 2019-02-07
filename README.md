@@ -1,6 +1,7 @@
 # Project_2 Create DB with CRUD routes in nodeJS
 
 ### Star Wars Galaxy of Heroes (swgoh) RESTful API
+
 I play a mobile game called Star Wars Galaxy of Heroes.  The game has an api from which I can absorb and use in my DB.  
 The idea would be to query the various characters, ships and abilites.  I can then correlate my account to see what I need to gain new characters being offered.  
 
@@ -10,16 +11,19 @@ For example, let say the game is going to introduce Jedi Knight Luke Skywalker n
 
 ### Routes
 
-#### Characters 
-/swgoh/characters - (method: GET) will provide a json list of all the characters and their corresponding data.
-/swgoh/characters/id - (method: GET) will provide a json list of all the specific character and their corresponding data.
+#### Characters
 
-/swgoh/characters/id - (method: DELETE) will delete the specific character and their corresponding data.
+- /swgoh/characters - (method: GET) will provide a json list of all the characters and their corresponding data.
 
-/swgoh/characters - (method: POST) Will create a new character with the corresponging data.  Data must be in the body.  Refer to Character's schema (below) for what items to pass.
+- /swgoh/characters/id - (method: GET) will provide a json list of all the specific character and their corresponding data.
 
-/swgoh/characters/id - (method: PUT) will update the specific character and specific data.  Data must be in the body.  Refer to Character's schema (below) for what items to pass.
+- /swgoh/characters/id - (method: DELETE) will delete the specific character and their corresponding data.
 
+- /swgoh/characters - (method: POST) Will create a new character with the corresponging data.  Data must be in the body.  Refer to Character's schema (below) for what items to pass.
+
+- /swgoh/characters/id - (method: PUT) will update the specific character and specific data.  Data must be in the body.  Refer to Character's schema (below) for what items to pass.
+
+```sql
   char_id SERIAL PRIMARY KEY,
   name VARCHAR(255) NOT NULL,
   url VARCHAR(255) NOT NULL,
@@ -33,17 +37,21 @@ For example, let say the game is going to introduce Jedi Knight Luke Skywalker n
   tags text[],
   abilities text[],
   base_id VARCHAR(255) NOT NULL
+```
 
-#### Ships 
-/swgoh/ships - (method: GET) will provide a json list of all the ships and it's corresponding data.
-/swgoh/ships/id - (method: GET) will provide a json list of all the specific ships and it's corresponding data.
+#### Ships
 
-/swgoh/ships/id - (method: DELETE) will delete the specific ships and it's corresponding data.
+- /swgoh/ships - (method: GET) will provide a json list of all the ships and it's corresponding data.
 
-/swgoh/ships - (method: POST) Will create a new ship with the corresponging data.  Data must be in the body.  Refer to Ships' schema (below) for what items to pass.
+- /swgoh/ships/id - (method: GET) will provide a json list of all the specific ships and it's corresponding data.
 
-/swgoh/ships/id - (method: PUT) will update the specific ship and specific data.  Data must be in the body.  Refer to Ships' schema (below) for what items to pass.
+- /swgoh/ships/id - (method: DELETE) will delete the specific ships and it's corresponding data.
 
+- /swgoh/ships - (method: POST) Will create a new ship with the corresponging data.  Data must be in the body.  Refer to Ships' schema (below) for what items to pass.
+
+- /swgoh/ships/id - (method: PUT) will update the specific ship and specific data.  Data must be in the body.  Refer to Ships' schema (below) for what items to pass.
+
+```sql
   ship_id SERIAL PRIMARY KEY,
   name VARCHAR(255) NOT NULL,
   url VARCHAR(255) NOT NULL,
@@ -56,17 +64,21 @@ For example, let say the game is going to introduce Jedi Knight Luke Skywalker n
   base_id VARCHAR(255),
   tags text[],
   abilities text[]
+```
 
 #### Abilities
-/swgoh/abilities - (method: GET) will provide a json list of all the abilities in the game and their corresponding data.
-/swgoh/abilities/id - (method: GET) will provide a json list of all the specific abilities and their corresponding data.
 
-/swgoh/abilities/id - (method: DELETE) will delete the specific abilities and their corresponding data.
+- /swgoh/abilities - (method: GET) will provide a json list of all the abilities in the game and their corresponding data.
 
-/swgoh/abilities - (method: POST) Will create a new abilities with the corresponging data.  Data must be in the body.  Refer to Abilities' schema (below) for what items to pass.
+- /swgoh/abilities/id - (method: GET) will provide a json list of all the specific abilities and their corresponding data.
 
-/swgoh/abilities/id - (method: PUT) will update the specific abilities and specific data.  Data must be in the body.  Refer to Abilities' schema (below) for what items to pass.
+- /swgoh/abilities/id - (method: DELETE) will delete the specific abilities and their corresponding data.
 
+- /swgoh/abilities - (method: POST) Will create a new abilities with the corresponging data.  Data must be in the body.  Refer to Abilities' schema (below) for what items to pass.
+
+- /swgoh/abilities/id - (method: PUT) will update the specific abilities and specific data.  Data must be in the body.  Refer to Abilities' schema (below) for what items to pass.
+
+```sql
   ability_id SERIAL PRIMARY KEY,
   name VARCHAR(255) NOT NULL,
   url VARCHAR(255) NOT NULL,
@@ -84,7 +96,7 @@ For example, let say the game is going to introduce Jedi Knight Luke Skywalker n
   is_leader BOOLEAN NOT NULL,
   char_table_id INT REFERENCES Characters(char_id),
   ship_table_id INT REFERENCES Ships(ship_id)
-
+```
 
 
 
