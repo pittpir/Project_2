@@ -98,6 +98,38 @@ For example, let say the game is going to introduce Jedi Knight Luke Skywalker n
   ship_table_id INT REFERENCES Ships(ship_id)
 ```
 
+### Format
+
+Response formats: 			JSON
+Requires authentication?:	NO
+Rate limited?				NO
+Paramaters:					None
+
+### Examples
+
+Use curl if you like CLI.  By the way, if you wish to see the json in a pretty format there are several options.
+
+**Option 1:** Must have python 2.6+ installed. 
+curl localhost:3000/swgoh/ships | python -m json.tool
+
+**Option 2:**  Install npm package json (My favorite way since it does color!). 
+curl localhost:3000/swgoh/ships | ./node_modules/.bin/json -i
+
+(HINT: you may want to put this curl CLI into a .sh file and execute it --  **Look for a do.sh in the repository for the examples below**): 
+
+```java
+GET command:		curl localhost:3000/swgoh/ships | ./node_modules/.bin/json -i
+DELETE Command:		curl -X DELETE localhost:3000/swgoh/abilities/869
+
+POST command:		
+
+curl -X POST localhost:3000/swgoh/ships -H "Content-Type: application/json" -d '[{"name":"Erase","url":"http://erase","image":"//erase","description":"Erase this","power": 55555,"alignment":"Light Side","role":"Meat Maker","capital_ship":false,"base_id":"Yuk","tags":["Galactic Republic","Jedi"],"abilities":["Dispel","Gain Turn Meter","Offense Up","Reset Cooldown"]}]'
+
+PUT (UPDATE) command:
+
+curl -X PUT localhost:3000/swgoh/ships/6 -H "Content-Type: application/json" -d '[{"url": "http://swgoh.gg/ships/cassians-u-wing/777","image": "//swgoh.gg/static/img/assets/tex.charui_uwing_hero.png/777"}]'
 
 
+```
 
+Use Postman if you like to use a GUI.  Use Content-Type: application/json as the body type when doing post, delete or puts.  
